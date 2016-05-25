@@ -5,27 +5,40 @@
 
 //Create a QuizUser constructor that accepts name, email, password, and totalScore parameters and set them appropriatly
 
-  //code here
+function QuizUser(name, email, password, totalScore) {
+    this.name = name;
+    this.email = email;
+    this.password = password;
+    this.totalScore = totalScore;
+}
+
 
 
 //Create a Question constructor that accepts title, answersArray, rightAnswer, and difficulty parameters
 
-  //code here
-
+function Question(title, answersArray, rightAnswer, difficulty) {
+    this.title = title;
+    this.answersArray = answersArray;
+    this.rightAnswer = rightAnswer;
+    this.difficulty = difficulty;
+}
 
 //Create a quizUsers Array which is going to hold all of our users.
 
-  //code here
+var quizUsers = [];
 
 
 //Let's say three people signed up for our service, create 3 instances of User and add each to the users Array
 
-  //code here
+quizUsers.push(new QuizUser("Tyler", "tylermcginnis33@gmail.com", "iLoveJS", 0));
+quizUsers.push(new QuizUser("Cahlan", "cahlan@devmounta.in", "iLoveHashtags", 0));
+quizUsers.push(new QuizUser("Lenny", "lenny@theLenster.com", "iLoveLentilSoup", 0));
+
 
 
 //Create a questions Array which is going to hold all of our questions
 
-  //code here
+var quizQuestions = [];
 
 
 //Now, let's say we wanted to create a quiz about JavaScript. Create three instances of Question which contain the following data
@@ -34,15 +47,29 @@
 //title: "T/F: In Javascript, == doesn't check 'type' but just the value - where === checks type and value"
 //Fill in the rest of the required data as you see appropriate.
 
-  //code here
+var q1 = "Inheritance is achieved in JavaScript through Prototypes?";
+var q2 = "JavaScript is just a scripting version of Java";
+var q3 = "In Javascript, == doesn't check 'type' but just the value - where === checks type and value";
 
 
 //Now push all of your instances of Question into the questions Array
 
-  //code here
+var answersArray = [q1, q2, q3];
 
-console.log('My users Array and my questions arrray are ...');
+
 //Now loop console.log your users array and your questions array and verify that they're both holding the right data.
 
-  //code here
+console.log('My users Array and my questions arrray are ...');
+quizUsers.forEach(function(item) {
+   console.log(item.name);
+   console.log(item.email);
+   console.log(item.password);
+   console.log(item.totalScore);
+});
+
+answersArray.forEach(function(item) {
+   console.log(item);
+});
+
+
 
